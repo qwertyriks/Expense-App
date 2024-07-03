@@ -1,15 +1,5 @@
 import React from 'react'
-import {Chart as ChartJs, 
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    LineElement,
-    Title,
-    Tooltip,
-    Legend,
-    ArcElement,
-} from 'chart.js'
-
+import {Chart as ChartJs, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, ArcElement} from 'chart.js'
 import {Line} from 'react-chartjs-2'
 import styled from 'styled-components'
 import { useGlobalContext } from '../../context/globalContext'
@@ -30,7 +20,7 @@ function Chart() {
     const {incomes, expenses} = useGlobalContext()
 
     const data = {
-        labels: incomes.map((inc) =>{
+        labels: incomes.map((inc) =>{ // Generate labels for x-axis using income dates
             const {date} = inc
             return dateFormat(date)
         }),
@@ -38,7 +28,7 @@ function Chart() {
             {
                 label: 'Income',
                 data: [
-                    ...incomes.map((income) => {
+                    ...incomes.map((income) => { // Generate data points for income
                         const {amount} = income
                         return amount
                     })
@@ -49,7 +39,7 @@ function Chart() {
             {
                 label: 'Expenses',
                 data: [
-                    ...expenses.map((expense) => {
+                    ...expenses.map((expense) => { // Generate data points for expenses
                         const {amount} = expense
                         return amount
                     })
@@ -63,7 +53,7 @@ function Chart() {
 
     return (
         <ChartStyled >
-            <Line data={data} />
+            <Line data={data} /> // Render the line chart using the data
         </ChartStyled>
     )
 }

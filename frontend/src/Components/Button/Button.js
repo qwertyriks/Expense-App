@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
+// Button component
 function Button({name, icon, onClick, bg, bPad, color, bRad}) {
     return (
         <ButtonStyled style={{
@@ -15,6 +16,7 @@ function Button({name, icon, onClick, bg, bPad, color, bRad}) {
     )
 }
 
+// Styled button component
 const ButtonStyled = styled.button`
     outline: none;
     border: none;
@@ -26,6 +28,5 @@ const ButtonStyled = styled.button`
     cursor: pointer;
     transition: all .4s ease-in-out;
 `;
-
 
 export default Button

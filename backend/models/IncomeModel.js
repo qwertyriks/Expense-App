@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-
+// Define the Income schema
 const IncomeSchema = new mongoose.Schema({
     title: {
         type: String,
@@ -16,7 +16,7 @@ const IncomeSchema = new mongoose.Schema({
     },
     type: {
         type: String,
-        default:"income"
+        default: "income"
     },
     date: {
         type: Date,
@@ -33,7 +33,8 @@ const IncomeSchema = new mongoose.Schema({
         required: true,
         maxLength: 20,
         trim: true
-    },
-}, {timestamps: true})
+    }
+}, { timestamps: true });
 
-module.exports = mongoose.model('Income', IncomeSchema)
+// Create and export the Income model
+module.exports = mongoose.model('Income', IncomeSchema);
